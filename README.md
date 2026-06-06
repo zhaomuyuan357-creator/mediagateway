@@ -1,555 +1,242 @@
 <div align="center">
 
-# 🎬 MediaRouter
+# 🚀 LumenRoute AI
 
-### Open Source Video Generation Gateway
+### 电商多智能体执行引擎
 
-**A unified API for multiple AI video generation providers**
+**拖拽素材 → AI 自动分析 → 选择商业目标 → 一键生成**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/samagra14/mediagateway?style=social)](https://github.com/samagra14/mediagateway)
-[![Docker Pulls](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://github.com/samagra14/mediagateway/pkgs/container/mediagateway-backend)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Screenshots](#-screenshots) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[核心理念](#-核心理念) · [快速开始](#-快速开始) · [业务流程](#-业务流程) · [技术架构](#-技术架构) · [API](#-api-接口)
 
 </div>
 
 ---
 
-## 🌟 Why MediaRouter?
+## 💡 核心理念
 
-**Own Your Video Generation Stack** - MediaRouter is the only 100% open source video generation gateway that gives you:
+**极简无参化** — 用户不应面对任何技术参数。
 
-- 🔓 **No Vendor Lock-in**: Switch between Sora, Runway, Kling, and more with a single API
-- 🔑 **Bring Your Own Keys**: Your API keys, your data, your control
-- 💰 **Cost Transparency**: Real-time cost tracking across all providers
-- 🏠 **Run Anywhere**: Docker-based deployment in 30 seconds
-- 🛠️ **Fully Customizable**: Add your own providers, modify workflows, extend functionality
+传统 AI 工具要求用户理解尺寸（1024×1024）、质量（auto/low/high）、格式（png/jpeg/webp）、时长（3s/5s/8s）、种子数……这些全部由后端默认值或 AI 分析结果隐式决定。
 
-> **🎉 Latest**: OpenAI's Sora 2 API support with synced audio generation!
+**LumenRoute AI 只暴露一种交互：选择目标。**
 
-### The Open Source Advantage
+| 传统流程 | LumenRoute 流程 |
+|----------|----------------|
+| 上传 → 配参数 → 写提示词 → 选模型 → 生成 | 上传 → 选目标 → 生成 |
+| 用户需要理解 10+ 个技术参数 | 用户只需点击 1 次 |
+| 对话驱动，多轮交互 | 任务驱动，一次闭环 |
 
-Unlike proprietary solutions, MediaRouter gives you:
-- ✅ Complete source code access
-- ✅ Self-hosted deployment
-- ✅ No usage limits or restrictions
-- ✅ Community-driven development
-- ✅ MIT licensed - use it anywhere
+---
 
-## ✨ Features
+## ✨ 特性
 
-- **🔌 Unified API**: Single OpenAI-compatible endpoint for multiple providers
-- **🎨 Beautiful Playground**: Modern React UI with shadcn/ui components
-- **🔑 BYOK Model**: Bring Your Own Keys - no vendor lock-in
-- **🎯 Multiple Providers**: Support for Sora 2, Runway, Kling, and more
-- **📊 Usage Tracking**: Monitor costs, generation times, and success rates
-- **🎬 Video Gallery**: Browse and manage your generated videos
-- **🚀 One Command Setup**: Get started instantly with Docker Compose
-- **🔒 Secure**: Encrypted API key storage with industry-standard encryption
+- **🎯 零参数交互**：上传素材后，AI 自动分析并推荐商业目标模板
+- **📦 任务驱动架构**：一次上传 = 一个任务 = 一条生命周期
+- **🖼️ 图片智能生成**：电商主图 / 产品详情 / 社交媒体 / 广告Banner / 节日主题
+- **🎬 视频智能生成**：爆款分析 → 分镜拆解 → 一键生成
+- **🔌 多 Provider 中转**：统一 API 管理 Seedance 2.0、OpenAI 等生成服务
+- **📊 素材库管理**：所有生成结果统一归档，支持搜索和筛选
+- **🏠 本地优先**：Docker 一键部署，数据完全自主
 
-## 🎥 Supported Providers
+---
 
-| Provider | Models | Image-to-Video | Audio | API Status | Pricing |
-|----------|--------|----------------|-------|------------|---------|
-| **OpenAI Sora** | Sora 2, Sora 1 | ✅ | ✅ | ✅ **Public** | $0.10/sec |
-| **Runway** | Gen-3, Gen-4 | ✅ | ❌ | ✅ **Public** | Usage-based |
-| **Kling AI** | v1.5, v1.0 | ✅ | ❌ | ✅ **Public** | Credit-based |
-| Pika Labs | Coming soon | ✅ | - | 🚧 Planned | - |
-| Luma Dream Machine | Coming soon | ✅ | - | 🚧 Planned | - |
+## 🎬 业务流程
 
-**All Three Providers Working**: Sora 2, Runway, and Kling all have public APIs available now!
+### 图片流程
 
-## 🚀 Quick Start
+```
+拖拽图片到上传区
+    ↓
+AI 自动分析图片内容
+    ↓
+展示预设目标卡片（电商主图 / 产品详情 / 社交媒体 / 广告Banner / 节日主题）
+    ↓
+勾选目标 → 点击「一键生成」
+    ↓
+并行生成 → 展示结果网格 → 下载
+```
 
-Get MediaRouter running in **3 commands**:
+### 视频流程
+
+```
+拖拽视频到上传区
+    ↓
+AI 爆款分析（Hook / Pacing / Visual Style / Audio）
+    ↓
+自动拆解分镜（5-8 个镜头，含 Seedance 提示词）
+    ↓
+可编辑分镜 → 点击「一键生成视频」
+    ↓
+轮询生成 → 视频播放器 → 下载
+```
+
+---
+
+## 🚀 快速开始
+
+### 一键启动（Docker）
 
 ```bash
-git clone https://github.com/samagra14/mediagateway.git
+git clone https://github.com/zhaomuyuan357-creator/mediagateway.git
 cd mediagateway
 ./setup.sh
 ```
 
-**That's it! ⚡** The script automatically:
-- ✅ Pulls pre-built Docker images (no build time!)
-- ✅ Generates secure encryption keys
-- ✅ Creates storage directories
-- ✅ Starts all services
+| 服务 | 地址 | 说明 |
+|------|------|------|
+| 前端 | http://localhost:3000 | 工作台界面 |
+| 后端 API | http://localhost:3001 | REST API |
+| API 文档 | http://localhost:3001/docs | Swagger 交互文档 |
 
-**Setup time: ~30 seconds**
-
-### 🎯 Next Steps
-
-1. **Open** http://localhost:3000
-2. **Add API Keys** → Go to Settings → Add your provider keys
-3. **Generate Videos** → Go to Playground → Enter a prompt → Generate!
-
-That's it! You're ready to create videos.
-
-### 📍 Access Points
-
-| Service | URL | Description |
-|---------|-----|-------------|
-| **Frontend** | http://localhost:3000 | Beautiful web interface |
-| **Backend API** | http://localhost:3001 | REST API endpoint |
-| **API Docs** | http://localhost:3001/docs | Interactive API documentation |
-
-### 📋 Prerequisites
-
-- [Docker](https://docs.docker.com/get-docker/) installed
-- API keys from [supported providers](#getting-api-keys)
-
-### Manual Setup (Without Docker)
-
-#### Backend
+### 本地开发
 
 ```bash
+# 后端
 cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-
-# Create .env file
-cp .env.example .env
-# Edit .env and add your encryption keys
-
-# Run server
+cp .env.example .env  # 填入你的 API Key
 python run.py
-```
 
-#### Frontend
-
-```bash
+# 前端
 cd frontend
-
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
 ```
 
-## 📖 Usage
+---
 
-### 1. Add API Keys
+## 🏗️ 技术架构
 
-1. Navigate to **Settings** page
-2. Click "Add API Key"
-3. Select your provider (OpenAI, Runway, or Kling)
-4. Paste your API key
-5. Click "Add Key" to validate and save
+```
+mediagateway/
+├── backend/                      # FastAPI 后端
+│   └── src/
+│       ├── api/routes.py         # 路由（任务提交、状态查询、素材管理）
+│       ├── providers/            # Provider 适配器（Seedance / OpenAI）
+│       ├── services/             # 业务逻辑（图片分析、视频分析、分镜拆解）
+│       ├── models/               # 数据库模型
+│       └── db/database.py        # SQLite / PostgreSQL
+│
+├── frontend/                     # React 前端（重构后）
+│   └── src/
+│       ├── pages/
+│       │   ├── Login.tsx         # 登录页（渐变光晕背景）
+│       │   ├── TaskWorkspace.tsx # 主工作台（组装 4 个核心组件）
+│       │   ├── Gallery.tsx       # 素材库
+│       │   └── Settings.tsx      # API 中转站管理
+│       ├── components/
+│       │   └── workspace/
+│       │       ├── UploadZone.tsx     # 拖拽上传区
+│       │       ├── GoalCardGrid.tsx   # 目标卡片网格
+│       │       ├── ActionPanel.tsx    # 操作控制面板
+│       │       └── ResultDisplay.tsx  # 结果展示
+│       ├── lib/
+│       │   ├── store.ts          # Zustand 状态树（4 字段极简设计）
+│       │   ├── api.ts            # API 客户端（submitTask + pollTask）
+│       │   └── mockTaskService.ts # 开发环境 Mock 服务
+│       └── components/ui/        # shadcn/ui 基础组件
+│
+└── docker-compose.yml
+```
 
-### 2. Generate Videos
+### 前端状态模型（极简 4 字段）
 
-1. Go to the **Playground** page
-2. Enter your prompt (e.g., "A serene sunset over mountains")
-3. Select your desired model
-4. Configure parameters:
-   - **Duration**: 1-10 seconds
-   - **Aspect Ratio**: 16:9, 9:16, or 1:1
-   - **Seed**: Optional, for reproducibility
-5. Click "Generate Video"
-6. Wait for generation to complete
-7. Download or view your video
-
-### 3. Browse Gallery
-
-1. Visit the **Gallery** page
-2. View all your generated videos
-3. Filter by provider or status
-4. Download or delete videos
-
-## 🔌 API Reference
-
-### Generate Video
-
-```bash
-POST /v1/video/generations
-Content-Type: application/json
-
-{
-  "model": "sora-2",
-  "prompt": "A serene sunset over mountains",
-  "duration": 5,
-  "aspect_ratio": "16:9",
-  "seed": 12345
+```typescript
+interface TaskStore {
+  selectedFile: File          // 用户上传的素材
+  selectedTemplate: Template  // 选择的商业目标
+  taskStatus: TaskStatus      // 'pending' | 'processing' | 'success' | 'failed'
+  taskResult: Result          // 生成结果（image_urls / video_url）
 }
 ```
 
-**Response:**
+### API 接口
 
-```json
-{
-  "id": "gen_abc123",
-  "object": "video.generation",
-  "created": 1728234567,
-  "model": "sora-2",
-  "provider": "openai",
-  "status": "processing",
-  "prompt": "A serene sunset over mountains",
-  "video": null,
-  "usage": null
-}
+```typescript
+// 提交任务（入参仅 fileUrl + templateId）
+POST /v1/tasks
+{ fileUrl: string, templateId: string }
+→ { task_id: string }
+
+// 轮询状态
+GET /v1/tasks/{task_id}
+→ { task_id, status, result?, error? }
 ```
 
-### Check Status
+---
 
-```bash
-GET /v1/video/generations/{generation_id}
+## 🛠️ 技术栈
+
+| 层 | 技术 |
+|----|------|
+| 前端框架 | React 18 + TypeScript 5.2 |
+| 构建工具 | Vite 5.4 |
+| 状态管理 | Zustand 5（极简 4 字段 store） |
+| UI 组件 | shadcn/ui + Tailwind CSS 3.3 |
+| 后端框架 | FastAPI + Python 3.11 |
+| 数据库 | SQLite（本地）/ PostgreSQL（Docker） |
+| 部署 | Docker Compose |
+
+---
+
+## 📸 界面预览
+
+### 登录页 — 渐变光晕背景
+深色 `bg-slate-950` 底色 + 蓝紫模糊光晕 + 毛玻璃登录卡片
+
+### 工作台 — 任务驱动
+```
+┌──────────────────────────────────────┐
+│  LumenRoute AI                       │
+├──────────────────────────────────────┤
+│  ┌────────────────────────────────┐  │
+│  │     拖拽图片或视频到此处        │  │  ← UploadZone
+│  └────────────────────────────────┘  │
+│                                      │
+│  选择商业目标                         │
+│  ┌──┐ ┌──┐ ┌──┐ ┌──┐ ┌──┐          │
+│  │电商│ │产品│ │社交│ │广告│ │节日│  │  ← GoalCardGrid
+│  └──┘ └──┘ └──┘ └──┘ └──┘          │
+│                                      │
+│       ┌────────────────┐             │
+│       │   一键生成      │             │  ← ActionPanel
+│       └────────────────┘             │
+│                                      │
+│  生成结果（4 张）                     │
+│  ┌──┐ ┌──┐ ┌──┐ ┌──┐               │  ← ResultDisplay
+│  └──┘ └──┘ └──┘ └──┘               │
+└──────────────────────────────────────┘
 ```
 
-### List Generations
+---
 
-```bash
-GET /v1/video/generations?limit=50&provider=openai&status=completed
-```
+## 🤝 参与贡献
 
-### Full API Documentation
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/xxx`)
+3. 提交改动 (`git commit -m 'feat: add xxx'`)
+4. 推送分支 (`git push origin feature/xxx`)
+5. 提交 Pull Request
 
-Visit http://localhost:3001/docs for interactive API documentation.
+---
 
-## 🔑 Getting API Keys
+## 📝 开源协议
 
-### OpenAI (Sora)
-
-1. Visit [OpenAI Platform](https://platform.openai.com/)
-2. Sign up or log in
-3. Navigate to API Keys section
-4. Create new API key
-5. **Note**: Sora access may require waitlist approval
-
-### Runway
-
-1. Visit [Runway](https://runwayml.com/)
-2. Sign up for an account
-3. Go to Settings → API Keys
-4. Generate new API key
-
-### Kling AI
-
-1. Visit [Kling AI](https://klingai.com/)
-2. Create an account
-3. Navigate to API section
-4. Generate API key
-
-## 🏗️ Architecture
-
-```
-mediarouter/
-├── backend/                 # FastAPI backend
-│   ├── src/
-│   │   ├── api/            # API routes and schemas
-│   │   ├── providers/      # Provider adapters
-│   │   ├── services/       # Business logic
-│   │   ├── models/         # Database models
-│   │   └── db/             # Database setup
-│   ├── requirements.txt
-│   └── run.py
-├── frontend/               # React frontend
-│   ├── src/
-│   │   ├── components/    # UI components
-│   │   ├── pages/         # Page components
-│   │   └── lib/           # Utilities and API client
-│   └── package.json
-├── storage/               # Video storage
-├── docker-compose.yml     # Docker orchestration
-└── setup.sh              # Setup script
-```
-
-## 🛠️ Development
-
-### Using Pre-built Images (Recommended)
-
-```bash
-# Pull latest images and start
-docker compose pull
-docker compose up -d
-
-# View logs
-docker compose logs -f
-```
-
-### Building Locally (For Development)
-
-If you want to build from source:
-
-```bash
-# Use the local development compose file
-docker compose -f docker-compose.local.yml up --build
-
-# Or build manually
-docker compose build
-docker compose up -d
-```
-
-### Backend Development (Without Docker)
-
-```bash
-cd backend
-
-# Install dev dependencies
-pip install -r requirements.txt
-
-# Run with hot reload
-uvicorn src.main:app --reload --port 3001
-
-# Run tests
-pytest
-```
-
-### Frontend Development (Without Docker)
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Run dev server
-npm run dev
-
-# Build for production
-npm run build
-
-# Lint
-npm run lint
-```
-
-### Adding a New Provider
-
-1. Create a new provider file in `backend/src/providers/`
-2. Implement the `VideoProvider` interface
-3. Add provider to `PROVIDERS` dict in `__init__.py`
-4. Add model mappings to `MODEL_PROVIDER_MAP`
-5. Test the provider integration
-
-Example:
-
-```python
-# backend/src/providers/newprovider.py
-from .base import VideoProvider, VideoRequest, VideoResponse
-
-class NewProvider(VideoProvider):
-    @property
-    def name(self) -> str:
-        return "newprovider"
-
-    @property
-    def models(self) -> list[str]:
-        return ["model-v1"]
-
-    async def validate_key(self) -> bool:
-        # Implement key validation
-        pass
-
-    async def generate_video(self, request: VideoRequest) -> VideoResponse:
-        # Implement video generation
-        pass
-
-    async def check_status(self, job_id: str) -> VideoResponse:
-        # Implement status checking
-        pass
-```
-
-## 🔒 Security
-
-- API keys are encrypted using Fernet (symmetric encryption)
-- Encryption keys are stored in `.env` (never commit to git)
-- HTTPS recommended for production deployments
-- CORS is configured for allowed origins only
-
-## 🐛 Troubleshooting
-
-### Cannot Pull Docker Images
-
-If you see "denied" errors when pulling images:
-
-```bash
-# The images might not be public yet, or the build is still running
-# Check build status: https://github.com/samagra14/mediagateway/actions
-
-# Option 1: Wait for the build to complete, then try again
-docker compose pull
-
-# Option 2: Build locally instead
-docker compose -f docker-compose.local.yml up --build
-```
-
-### Port Already in Use
-
-```bash
-# Stop existing containers
-docker compose down
-
-# Check what's using the ports
-lsof -i :3000  # Frontend
-lsof -i :3001  # Backend
-
-# Or change ports in docker-compose.yml
-```
-
-### Database Issues
-
-```bash
-# Reset database
-rm storage/db.sqlite
-
-# Restart backend
-docker compose restart backend
-```
-
-### Video Generation Stuck
-
-- Check provider API status
-- Verify API key validity in Settings
-- Check backend logs: `docker compose logs -f backend`
-- Some providers have rate limits
-- Sora may require waitlist approval
-
-### Services Not Starting
-
-```bash
-# Check logs
-docker compose logs
-
-# Restart everything
-docker compose down
-docker compose up -d
-
-# Check service health
-docker compose ps
-```
-
-## 📸 Screenshots
-
-### Playground - Generate Videos
-![Playground](./assets/playground_final.png)
-*Generate videos with any provider using a beautiful, intuitive interface*
-
-### Gallery - Manage Your Videos
-![Gallery](./assets/gallery.png)
-*Browse, filter, and manage all your generated videos in one place*
-
-### Usage Analytics - Track Costs
-![Usage Analytics](./assets/usage.png)
-*Monitor spending, generation times, and success rates across all providers*
-
-### Settings - Manage API Keys
-![Settings](./assets/settings.png)
-*Securely add and manage API keys for multiple providers*
-
-## 📊 Usage Statistics
-
-View detailed usage statistics in the Settings page:
-- Total generations
-- Cost breakdown by provider/model
-- Average generation times
-- Success/failure rates
-
-## 🤝 Contributing
-
-We love contributions! MediaRouter is built by the community, for the community.
-
-### Ways to Contribute
-
-- 🐛 Report bugs and issues
-- 💡 Suggest new features or providers
-- 📝 Improve documentation
-- 🔧 Submit pull requests
-- ⭐ Star the repo to show support
-
-### Quick Start for Contributors
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Test locally with `docker compose -f docker-compose.local.yml up --build`
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
-
-### Development Guidelines
-
-- Follow existing code style (FastAPI for backend, React for frontend)
-- Add tests for new features
-- Update documentation
-- Ensure Docker builds succeed
-- Add provider integrations using the `VideoProvider` interface
-
-See [CLAUDE.md](CLAUDE.md) for detailed development guide.
-
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-**What this means:**
-- ✅ Commercial use allowed
-- ✅ Modification allowed
-- ✅ Distribution allowed
-- ✅ Private use allowed
-- ❌ No warranty provided
-- ❌ No liability accepted
-
-## 🌟 Support the Project
-
-If MediaRouter is helpful to you:
-
-- ⭐ **Star this repo** - It helps others discover the project
-- 🐦 **Share on social media** - Spread the word
-- 💬 **Join discussions** - Share your use cases and ideas
-- 🤝 **Contribute** - Code, docs, or ideas welcome
-- 🐛 **Report bugs** - Help us improve
-
-## 📞 Community & Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/samagra14/mediagateway/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/samagra14/mediagateway/discussions)
-- 📖 **Documentation**: [Full Documentation](./CLAUDE.md)
-
-## 🗺️ Roadmap
-
-### Coming Soon
-- [ ] Additional providers (Pika, Luma, Haiper)
-- [ ] Image-to-video support
-- [ ] Video-to-video transformations
-- [ ] Batch generation
-- [ ] Webhook notifications
-- [ ] CLI tool
-- [ ] Python/TypeScript SDKs
-
-### Completed ✅
-- [x] Sora 2 API integration
-- [x] Runway Gen-3/Gen-4 support
-- [x] Kling AI v1.5 support
-- [x] Usage tracking and analytics
-- [x] Pre-built Docker images
-- [x] OpenAI-compatible API
-
-## 🙏 Acknowledgments
-
-Built with amazing open source technologies:
-- [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
-- [React](https://reactjs.org/) - UI library
-- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
-- [Docker](https://www.docker.com/) - Containerization
+本项目基于 [MIT License](./LICENSE) 开源。
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the open source community**
+**LumenRoute AI** — 让电商 AI 创作回归简单
 
-[⬆ Back to Top](#-mediarouter)
+[⬆ 回到顶部](#-lumenroute-ai)
 
 </div>
